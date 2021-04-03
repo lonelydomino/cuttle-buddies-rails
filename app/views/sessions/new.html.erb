@@ -1,8 +1,22 @@
-<%= form_with(model: @user, url: "/login") do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+<%= stylesheet_link_tag "sessions" %>
+<br>
 
-    <%= f. label :password %>
-    <%= f.password_field :password %>
-    <%= f.submit %>
-<% end %>
+
+<div class="login-box">
+    <h2>Login</h2>
+    <%= form_with(model: @user, url: "/login", class: "login-form") do |f| %>
+        <div class="user-box">    
+            <%= f.email_field :email%>
+           <%= f.label "Email" %>
+        </div>
+        <div class="user-box">
+            <input type="password" name="" required="">
+            <%= f.label "Password" %>
+        </div>
+        <%= f.submit "Log in", class: "submit-button"%><br>
+    <% end %><br>
+
+    Or log in with:<br> 
+    <br><%= button_to "Log in with Google", '/auth/google_oauth2', class: "google-button" %>
+</div>
+    

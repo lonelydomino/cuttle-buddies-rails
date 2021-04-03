@@ -1,10 +1,31 @@
-<h1>Registration </h1>
+<%= stylesheet_link_tag "sessions" %>
 
-<%= form_with(model: @user) do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
 
-    <%= f. label :password %>
-    <%= f.password_field :password %>
-    <%= f.submit %>
-<% end %>
+
+<div class="login-box">
+    <h1>Registration </h1>
+    <%= form_with(model: @user) do |f| %>
+        <div class="user-box"> 
+                <%= f.label "Email" %>
+                <%= f.email_field :email %><br>
+        </div>
+        <div class="user-box"> 
+                <%= f.label "First name" %>
+                <%= f.text_field :first_name %><br>
+        </div>
+        <div class="user-box"> 
+                <%= f.label "Last name" %>
+                <%= f.text_field :last_name %><br>
+        </div>
+        <div class="user-box"> 
+                <%= f.label "Age" %>
+                <%= f.number_field :age %><br>
+        </div>
+        <div class="user-box"> 
+                <%= f.label "Password" %>
+                <%= f.password_field :password %><br>
+        </div>
+
+        <%= f.submit "Sign up", class: "submit-button"%>
+    <% end %>
+</div>
