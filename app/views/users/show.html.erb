@@ -1,4 +1,53 @@
-<h1><%= @user.username %></h1>
-<h1><%= @user.email %></h1>
-<h1><%= @user.provider %></h1>
-<h1><%= @user.uid %></h1>
+<%= stylesheet_link_tag "users" %>
+
+
+
+
+<div class="header">
+  
+</div>
+
+<div class="topnav">
+  <%= link_to "All Users", users_path %>
+  <%= link_to "Search" %>
+  <a href="#">Link</a>
+</div>
+
+<div class="row">
+  <div class="column">
+  <div class="user-box">
+    <h2>Partners</h2>
+    <p> 
+        <% if !@user.partners.empty? %>
+            <% @user.partners do |p|  %>
+                    <%= p.name %>
+            <% end %> 
+        <% else %>
+            Add partner(s)!
+        <% end %> 
+    </p>
+  </div>
+    </div>
+  <div class="column">
+   <div class="user-box">
+    <h2>News</h2>
+    <p>
+        Welcome to CuttleBuddies Beta!
+    </p>
+  </div>
+    </div>
+  <div class="column">
+   <div class="user-box">
+    <h2>Friends</h2>
+    <p>
+        <% if !@user.friends.empty? %>
+                <% @user.friends do |f|  %>
+                    <%= f.name %>
+                <% end %> 
+            <% else %>
+                Add friends(s)!
+        <% end %> 
+    </p>
+  </div>
+    </div>
+</div>

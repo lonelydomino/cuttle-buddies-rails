@@ -1,43 +1,35 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 
-div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    color: red;
-  }
-  label {
-      color: red;
-  }
+body {
+    font-family: Verdana;
+}
 
   //   Form
-  .login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
+  .user-box {
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //width: 90%;
+    height: 70%;    
     padding: 40px;
-    transform: translate(-50%, -50%);
+    //transform: translate(-50%, -50%);
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
   }
   
-  .login-box h2 {
+  .user-box h2 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
   }
   
-  .login-box .user-box {
+  .user-box .user-box {
     position: relative;
   }
   
-  .login-box .user-box input {
+  .user-box .user-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -48,8 +40,8 @@ div {
     outline: none;
     background: transparent;
   }
-  
-  .login-box .user-box label {
+
+  .user-box .user-box label {
     position: absolute;
     top:0;
     left: 0;
@@ -60,15 +52,15 @@ div {
     transition: .5s;
   }
   
-  .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
+  .user-box .user-box input:focus ~ label,
+  .user-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: #3e7bff;
     font-size: 12px;
   }
   
-  .login-box form .submit-button {
+  .user-box form .submit-button {
     position: relative;
     display: inline-block;
     padding: 23px 120px;
@@ -84,3 +76,153 @@ div {
     border: none;
     font-family: Verdana;
   }
+
+  //NEW
+  .header {
+    background-color: transparent;
+    padding: 120px;
+    text-align: center;
+  }
+  
+  /* Style the top navigation bar */
+  .topnav {
+       /* overflow: hidden; */
+       background-color: #333;
+
+       text-align: center;
+       display: inline-block;
+       /* padding-left: 50px; */
+       /* padding: 0px 464px; */
+       width: 100%;
+  }
+  
+  /* Style the topnav links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    width: 31.65%;
+   
+  }
+  
+  /* Change color on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 31%;
+    padding: 15px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  ///////////////
+  // User Profile Cards
+  @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
+  .snip1336 {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-family: 'Roboto', Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 230px;
+    max-width: 315px;
+    width: 100%;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.4em;
+    background-color: #141414;
+  }
+  .snip1336 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+  .snip1336 img {
+    max-width: 100%;
+    vertical-align: top;
+    opacity: 0.85;
+  }
+  .snip1336 figcaption {
+    width: 100%;
+    background-color: #141414;
+    padding: 25px;
+    position: relative;
+  }
+  .snip1336 figcaption:before {
+    position: absolute;
+    content: '';
+    bottom: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 55px 0 0 400px;
+    border-color: transparent transparent transparent #141414;
+  }
+  .snip1336 figcaption a {
+    padding: 5px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    margin: 10px 0;
+    display: inline-block;
+    opacity: 0.65;
+    width: 47%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .snip1336 figcaption a:hover {
+    opacity: 1;
+  }
+  .snip1336 .profile {
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%;
+    left: 25px;
+    z-index: 1;
+    max-width: 90px;
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  .snip1336 .follow {
+    margin-right: 4%;
+    border-color: #2980b9;
+    color: #2980b9;
+  }
+  .snip1336 h2 {
+    margin: 0 0 5px;
+    font-weight: 300;
+  }
+  .snip1336 h2 span {
+    display: block;
+    font-size: 0.5em;
+    color: #2980b9;
+  }
+  .snip1336 p {
+    margin: 0 0 10px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+  

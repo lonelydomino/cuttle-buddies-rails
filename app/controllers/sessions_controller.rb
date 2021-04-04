@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    before_action :redirect_if_logged_in, only: [:new]
+    
     def home
     end
     
@@ -34,5 +36,7 @@ class SessionsController < ApplicationController
     def auth
         request.env['omniauth.auth']
     end
+
+    
 
   end

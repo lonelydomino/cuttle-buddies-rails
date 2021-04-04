@@ -1,4 +1,15 @@
 class UsersController < ApplicationController
+    before_action :redirect_if_logged_in, only: [:new]
+    before_action :redirect_if_not_logged_in, only: [:show]
+
+    def index
+        if params["search"]
+            @users = User.search_by_name(params["search"])
+        else
+            @users = User.all
+        end
+    end
+    
     def new
         @user = User.new
     end
