@@ -6,6 +6,9 @@ class User < ApplicationRecord
     has_many :partners, class_name: "User", foreign_key: "partnerslist_id"
     scope :search_by_name, -> (search) {where("username LIKE ?", "#{search}%")}
 
+    validates :email, uniqueness: true
+    validates :password, presence: true
+
     def self.from_omniauth(auth)
         self.find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |u|
             u.email = auth['info']['email']

@@ -1,0 +1,10 @@
+ <br><br><br>
+
+ <div class="flash-message"> 
+    <% flash.each do |type, msg| %>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Danger!</strong> <%= msg %>
+        </div>   
+    <% end %>
+ </div>

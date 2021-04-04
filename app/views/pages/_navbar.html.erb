@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <ul>
-  <li><%= link_to "Home", root_path %></li>
+  <li><%= link_to "Log Out", logout_path if logged_in? %></li>
+  <li><%= link_to "About", root_path %></li>
   <li><%= link_to "Profile", user_path(current_user) if logged_in? %>
   <li><%= link_to "Friends", user_path(current_user) if logged_in? %>
   <li><%= link_to "Messages", user_path(current_user) if logged_in? %>
   <li><%= link_to "Log In", login_path if !logged_in? %></li>
   <li><%= link_to "Register", signup_path if !logged_in? %></li>
-  <li><%= link_to "About", root_path %></li>
-  <li><%= link_to "Log Out", logout_path if logged_in? %></li>
-  <li>
+  <li><%= link_to "Home", root_path %></li>
+  <li class="list-search">
     <div class="search-container">  
       <%= form_with(url: users_path, method: :get) do |f|%>
         <%= f.text_field :search, placeholder: "Search users!" %>
@@ -20,4 +20,5 @@
 </ul>
 <br>
 <br>
+
 

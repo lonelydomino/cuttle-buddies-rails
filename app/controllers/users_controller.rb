@@ -20,7 +20,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to @user
         else
-            render :new
+            redirect_to '/signup', error: "Failed!"
         end
     end
 

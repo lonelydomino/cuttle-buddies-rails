@@ -13,10 +13,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<% flash.each do |type, msg| %>
-  <%= msg %>
-<% end %>
- <%= render 'pages/navbar'%>
+
+  <%= render 'pages/navbar'%>
+  <%= render 'pages/errors'%>
+
 
   <body>
     <%= yield %>

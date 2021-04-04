@@ -6,11 +6,11 @@
     <h2>Login</h2>
     <%= form_with(model: @user, url: "/login", class: "login-form") do |f| %>
         <div class="user-box">    
-            <%= f.email_field :email%>
+            <%= f.email_field :email, required: ""%>
            <%= f.label "Email" %>
         </div>
         <div class="user-box">
-            <input type="password" name="" required="">
+            <%= f.password_field :password, required: "" %>
             <%= f.label "Password" %>
         </div>
         <%= f.submit "Log in", class: "submit-button"%><br>
