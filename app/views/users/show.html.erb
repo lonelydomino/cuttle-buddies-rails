@@ -1,13 +1,16 @@
 <%= stylesheet_link_tag "users" %>
 
 <div class="header">
+<% 10.times do |f| %>
+  <%= image_tag get_random_fish_image, class: "tank-image" %>
+<% end %>
   
 </div>
 
 <div class="topnav">
   <%= link_to "All Users", users_path %>
-  <%= link_to "Search" %>
-  <a href="#">Link</a>
+  <%= link_to "Replace this" %>
+  <%= link_to "Replace this too" %>
 </div>
 
 <div class="row">
@@ -15,13 +18,13 @@
   <div class="user-box">
     <h2>Partners</h2>
     <p> 
-        <% if !@user.partners.empty? %>
-            <% @user.partners do |p|  %>
-                    <%= p.name %>
-            <% end %> 
-        <% else %>
+        <%# <% if !@user.partners.empty? %> %>
+            <%# <% @user.partners do |p|  %> %>
+                    <%# <%= p.name %> %>
+            <%# <% end %>  %>
+        <%# <% else %> %>
             Add partner(s)!
-        <% end %> 
+        <%# <% end %>  %>
     </p>
   </div>
     </div>
@@ -38,11 +41,14 @@
     <h2>Friends</h2>
     <p>
         <% if !@user.friends.empty? %>
-                <% @user.friends do |f|  %>
-                    <%= f.name %>
-                <% end %> 
-            <% else %>
-                Add friends(s)!
+          <% @user.friends do |f|  %>
+              <%= f.name %>
+          <% end %> 
+        <% else %>
+          <%= form_with(url: users_path, method: :get) do |f|%>
+            <%= f.hidden_field :search, value: "" %>
+            <button class="friends-search-button" type="submit">Search for friends!</button>
+          <% end %>
         <% end %> 
     </p>
   </div>

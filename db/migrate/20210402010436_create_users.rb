@@ -13,8 +13,8 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :provider
       t.text :bio
 
-      t.references :friendslist, foreign_key: {to_table: :users}
-      t.references :partnerslist, foreign_key: {to_table: :users}
+
+
 
       t.timestamps
     end

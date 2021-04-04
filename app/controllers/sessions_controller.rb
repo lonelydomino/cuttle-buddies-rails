@@ -6,18 +6,14 @@ class SessionsController < ApplicationController
     
     def new
         @user = User.new
-        byebug
     end
 
     def create
         user = User.find_by_email(params[:user][:email])
-        byebug
         if user && user.authenticate(params[:user][:password])
-            byebug
             session[:user_id] = user.id
             redirect_to user
         else
-            byebug
             redirect_to '/login', error: "Invalid credentials"
         end
     end
@@ -28,7 +24,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to @user
         else
-
+            render :new
         end
     end
 

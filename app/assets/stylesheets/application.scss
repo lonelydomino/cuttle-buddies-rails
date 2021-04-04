@@ -68,10 +68,10 @@ ul {
     background: #ccc;
   }
  
-  button:hover {
+  .search-button:hover {
     background: #ccc;
   }
-  button {
+  .search-button {
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     float: right;
@@ -88,6 +88,11 @@ ul {
   .alert {
     padding: 20px;
     background-color: #f44336;
+    color: white;
+  }
+  .success {
+    padding: 20px;
+    background-color: #26e274;
     color: white;
   }
   

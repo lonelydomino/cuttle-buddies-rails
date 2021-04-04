@@ -225,4 +225,80 @@ body {
     letter-spacing: 1px;
     opacity: 0.8;
   }
+
+  ////////////
+  ///
+  ///tank
+  ///
+  ////////////
   
+
+
+  
+  .tank-image {
+    width: 101px;
+    height: 101px;
+    position: absolute;
+    color: white; 
+  }
+  
+  .tank-image:nth-child(1) {
+    top: 159px;
+    left: 664px;
+     }
+  
+  .tank-image:nth-child(2) {
+    top: 43px;
+    left: 297px;
+    }
+  
+  .tank-image:nth-child(3) {
+    top: 58px;
+    left: 1206px;
+}
+  
+  .tank-image:nth-child(4) {
+    top: 178px;
+    left: 116px;
+}
+  
+  .tank-image:nth-child(5) {
+    top: 158px;
+    left: 448px;
+  }
+  
+  .tank-image:nth-child(6) {
+    top: 101px;
+    left: 1581px;
+ }
+  
+  .tank-image:nth-child(7) {
+    top: 59px;
+    left: 193px;
+   }
+  
+  .tank-image:nth-child(8) {
+    top: 109px;
+    left: 940px;
+   }
+  
+  .tank-image:nth-child(9) {
+    top: 210px;
+    left: 1474px;
+  }
+  
+  .tank-image:nth-child(10) {
+    top: 220px;
+    left: 579px;
+     }
+
+     /////////////////
+     //friends search button
+     .friends-search-button {
+       padding: 20px;
+       border-radius: 20px;
+       background-color: rgb(60, 128, 255);
+       color: white;
+       text-decoration: none;
+       box-shadow: none;
+     }
