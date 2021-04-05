@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag "friends" %>
+
+<div class="user-box">  
+    <h1> Friends list </h1><br><br>
+    <% if !@friends.empty? %>
+        <% @friends.each do |r| %>
+            <div class="friend-card">
+                
+               <%= r.username %>
+                <%# <%= button_to "Deny", request_path(:id => r.id, request: r), :method => :delete %> %>
+            </div>
+        <% end %>
+    <% else %>
+        <h1> No friends! </h1>
+    <% end %>
+</div>

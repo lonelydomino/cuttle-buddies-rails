@@ -10,14 +10,14 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  post "/friends/accept_request" => "friends#accept_request"
+  # post "/requests/accept_request" => "requests#accept_request"
 
 
   resources :users
-
-  resources :users, only: [:show] do
-    resources :messages, only:[:show, :index, :new, :edit]
-  end
-  resources :friends
+  resources :requests, only:[:create, :index, :destroy]
+  resources :friends, only:[:create, :index, :destroy]
+  # resources :users, only: [:show] do
+  #   resources :messages, only:[:show, :index, :new, :edit]
+  # end
 
 end

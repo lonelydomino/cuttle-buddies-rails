@@ -40,16 +40,17 @@
    <div class="user-box">
     <h2>Friends</h2>
     <p>
-        <% if !@user.friends.empty? %>
-          <% @user.friends do |f|  %>
-              <%= f.name %>
-          <% end %> 
-        <% else %>
+      
+        <% if @user.friends.empty? %>
           <%= form_with(url: users_path, method: :get) do |f|%>
             <%= f.hidden_field :search, value: "" %>
             <button class="friends-search-button" type="submit">Search for friends!</button>
           <% end %>
-        <% end %> 
+        <% else %> 
+          <% @user.friends.each do |f| %>
+          <%= f.username %>
+          <% end %>
+        <% end %>
     </p>
   </div>
     </div>

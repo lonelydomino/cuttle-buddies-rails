@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag "requests" %>
+
+<div class="user-box">  
+    <h1> Pending friend requests </h1><br><br>
+    <% if !@requests.empty? %>
+        <% @requests.each do |r| %>
+            <div class="request-card">
+                <%= print_request_sender(r) %> <br>
+                <%= button_to "Accept Request", friends_path(:id => r.id, request: r), :method => :post %>
+                <%= button_to "Deny", request_path(:id => r.id, request: r), :method => :delete %>
+            </div>
+        <% end %>
+    <% else %>
+        <h1> No current requests! </h1>
+    <% end %>
+</div>
