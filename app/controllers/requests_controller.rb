@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
     def index
-        @requests = current_user.pending_requests
+        pending_requests = Request.where("friend_id = ? AND confirmed = false", current_user.id)
+        @requests = pending_requests
     end
 
     def create
