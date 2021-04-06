@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
     def index
-        @requests = Request.pending
+        @requests = current_user.pending_requests
     end
 
     def create

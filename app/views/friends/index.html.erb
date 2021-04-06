@@ -1,16 +1,30 @@
 <%= stylesheet_link_tag "friends" %>
 
-<div class="user-box">  
+
+
+<% if @friends.empty? %>
+    <h1> No users found! </h2>
+<% else %>
+    <div class="user-box">
     <h1> Friends list </h1><br><br>
-    <% if !@friends.empty? %>
-        <% @friends.each do |r| %>
-            <div class="friend-card">
+        <% @friends.each do |u| %>
+            <% if u.id == current_user.id %>
                 
-               <%= r.username %>
-                <%# <%= button_to "Deny", request_path(:id => r.id, request: r), :method => :delete %> %>
-            </div>
+            <% else %>
+                <figure class="snip1336">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+                    <figcaption>
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" class="profile" />
+                        <h2><%= u.username %><span>Engineer</span></h2>
+                        <p><%= u.bio %> </p>
+        
+                        <%= link_to "Add", requests_path(id: u.id), :method => :post, class: "follow" if logged_in? && !already_friends?(u.id) %>
+                        <%= image_tag("friends.png",size: "50") if already_friends?(u.id)%>
+                        <%= link_to "Profile",class: "info" if logged_in? %>
+                    </figcaption>
+                </figure>
+            <% end %>
         <% end %>
-    <% else %>
-        <h1> No friends! </h1>
-    <% end %>
-</div>
+    </div>
+<% end %>
+
