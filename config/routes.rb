@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'fish/index'
+  get 'fish/destroy'
   #get 'pages/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'pages#home'
@@ -14,6 +16,10 @@ Rails.application.routes.draw do
 
 
   resources :users
+  resources :users, only:[:show] do 
+    resources :fishes, only:[:index]
+  end
+
   resources :requests, only:[:create, :index, :destroy]
   resources :friends, only:[:create, :index, :destroy]
   resources :shop, only:[:create, :index]
