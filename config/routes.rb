@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :requests, only:[:create, :index, :destroy]
   resources :friends, only:[:create, :index, :destroy]
-  resources :shop, only:[:create, :index]
+  resources :lottery, only:[:create, :index]
   # resources :users, only: [:show] do
   #   resources :messages, only:[:show, :index, :new, :edit]
   # end

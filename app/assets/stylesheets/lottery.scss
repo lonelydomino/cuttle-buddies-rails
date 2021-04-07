@@ -1,0 +1,98 @@
+// Place all the styles related to the Shops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    font-family: Verdana;
+}
+
+  //   Form
+  .element-box {
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //width: 90%;
+    //height: 70%;
+    width: 30%;
+    margin-left: 35%;    
+    padding: 40px;
+    //transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .element-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .element-box .element-box {
+    position: relative;
+  }
+  
+  .element-box .element-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .element-box .element-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #3e7bff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .element-box .element-box input:focus ~ label,
+  .element-box .element-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #3e7bff;
+    font-size: 12px;
+  }
+  
+  .element-box form .submit-button {
+    position: relative;
+    display: inline-block;
+    padding: 23px 120px;
+    color: #ffffff;
+    background-color: rgb(0, 110, 255);
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana;
+  }
+
+  /////////////////////////////////
+  //button
+
+  .roll-button {
+      border-radius: 25px;
+      background-color: rgb(107, 166, 255);
+      color: white;
+
+      box-shadow: none;
+      border-style: none;
+      padding: 20px 50px;
+      font-size: 20px;
+      font-weight: bold;
+  }
+  
