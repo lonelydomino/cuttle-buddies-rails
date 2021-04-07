@@ -11,5 +11,4 @@ class Request < ApplicationRecord
         self.destroy
     end
 
-
 end

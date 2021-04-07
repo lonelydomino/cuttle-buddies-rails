@@ -5,7 +5,9 @@ class User < ApplicationRecord
 
     has_many :requests
     has_many :pending_requests, -> {where confirmed: false }, class_name: 'Request', foreign_key: 'friend_id'
-        
+    
+    has_many :fish_quantities
+    has_many :fishes, through: :fish_quantities
 
     def friends
         friends_i_sent_requests = Request.where(user_id: id, confirmed: true).pluck(:friend_id)
