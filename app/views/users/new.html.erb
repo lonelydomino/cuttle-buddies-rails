@@ -4,7 +4,7 @@
 
 <div class="login-box">
     <h1>Registration </h1>
-    <%= form_with(model: @user) do |f| %>
+    <%= form_for(@user) do |f| %>
         <div class="user-box"> 
                 <%= f.label "Email" %>
                 <%= f.email_field :email %><br>
@@ -24,6 +24,10 @@
         <div class="user-box"> 
                 <%= f.label "Password" %>
                 <%= f.password_field :password %><br>
+        </div>
+          <div class="user-box"> 
+                <%= f.label "Avatar" %>
+                <%= f.file_field :image %><br>
         </div>
 
         <%= f.submit "Sign up", class: "submit-button"%>

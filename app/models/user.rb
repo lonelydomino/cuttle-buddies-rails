@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     has_secure_password
+    has_one_attached :image
     validates :email, uniqueness: true
     scope :search_by_name, -> (search) {where("username LIKE ?", "#{search}%")}
 
@@ -21,7 +22,6 @@ class User < ApplicationRecord
         new_request.save
     end
    
-
     def self.from_omniauth(auth)
         self.find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |u|
             u.email = auth['info']['email']
