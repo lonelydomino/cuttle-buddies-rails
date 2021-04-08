@@ -11,8 +11,9 @@
                     <%= image_tag("underwater-bg.jpeg",size: "320")%>
                     <figcaption>
                         <%= image_tag("/assets/tank/#{f.image_path}",alt: "profile-sample4", class: "profile") %>
-                        <h2><%= f.name %><span><%= button_to "X", "/users/#{current_user.id}/fishes/#{f.id}", :method => :delete  %></span></h2>
-                        <p><%= f.name %> </p>
+                        <h2><%= f.name %><span><br><%= button_to "X", "/users/#{current_user.id}/fishes/#{f.id}",class: "x-button", :method => :delete, data:
+{confirm: "Are you sure you want to delete this fish?" }  %></span></h2>
+                        <p><%= f.desc %> </p>
                     </figcaption>
                 </figure>
             <% end %>

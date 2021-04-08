@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <%if logged_in?  %> 
-  <% p = current_user.points + 1  %>
+  <% p = current_user.points + 100  %>
   <%= current_user.update(points: p) %>
 <% end %>
 <ul>

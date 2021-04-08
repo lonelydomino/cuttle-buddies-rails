@@ -4,7 +4,8 @@ class FishesController < ApplicationController
   end
 
   def destroy
-    current_user.fishes.find_by_id(params[:id]).destroy
+    Fish.find_by_id(params[:id]).fish_quantities.where("fish_id = #{params[:id]}").first.destroy
+    #OPTIMIZE figure out how to get this to show specific fish quantity
     redirect_to user_fishes_url
   end
 end
