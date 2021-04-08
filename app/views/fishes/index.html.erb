@@ -1,7 +1,20 @@
-<h1>Fish#index</h1>
-<p>Find me in app/views/fish/index.html.erb</p>
+<%= stylesheet_link_tag "fish" %>
 
 
-<% @fish.each do |f|%>
-<%= f.name %><br>
+<% if @fish.empty? %>
+    <h1> No fish found! Go roll for some!</h2>
+<% else %>
+    <div class="user-box">
+    <h1> My fish </h1><br><br>
+        <% @fish.each do |f| %>
+                <figure class="snip1336">
+                    <%= image_tag("underwater-bg.jpeg",size: "320")%>
+                    <figcaption>
+                        <%= image_tag("/assets/tank/#{f.image_path}",alt: "profile-sample4", class: "profile") %>
+                        <h2><%= f.name %><span><%= button_to "X", "/users/#{current_user.id}/fishes/#{f.id}", :method => :delete  %></span></h2>
+                        <p><%= f.name %> </p>
+                    </figcaption>
+                </figure>
+            <% end %>
+    </div>
 <% end %>
