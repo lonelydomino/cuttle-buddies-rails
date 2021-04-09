@@ -7,9 +7,8 @@ class User < ApplicationRecord
     has_many :requests
     has_many :pending_requests, -> {where confirmed: false }, class_name: 'Request', foreign_key: 'friend_id'
     
-    has_many :fish_quantities
-    has_many :fishes, through: :fish_quantities
-
+    has_many :user_fishes
+    has_many :fishes, through: :user_fishes
     def friends
         friends_i_sent_requests = Request.where(user_id: id, confirmed: true).pluck(:friend_id)
         friends_i_got_requests = Request.where(friend_id: id, confirmed: true).pluck(:user_id)
@@ -18,8 +17,7 @@ class User < ApplicationRecord
     end
 
     def send_request_to(new_friend)
-        new_request = Request.new(user_id: self.id, friend_id: new_friend.id)
-        new_request.save
+        Request.find_or_create_by(user_id: self.id, friend_id: new_friend.id)
     end
    
     def self.from_omniauth(auth)

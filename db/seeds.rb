@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.create(email: "luneya@gmail.com", username: "luneya", first_name: "luneya", password: "123456")
 User.create(email: "bob@gmail.com", username: "bob",first_name: "bob", password: "abcdef")
 User.create(email: "jim@gmail.com", username: "jim",first_name: "jim", password: "abcdef") 
 User.create(email: "fred@gmail.com", username: "fred",first_name: "fred", password: "abcdef")
@@ -18,7 +18,7 @@ User.create(email: "bev@gmail.com", username: "bev", first_name: "bev", password
 User.create(email: "balnor@gmail.com", username: "balnor", first_name: "balnor", password: "abcdef")
 User.create(email: "onyx@gmail.com", username: "onyx", first_name: "onyx", password: "abcdef")
 User.create(email: "pawpaw@gmail.com", username: "pawpaw", first_name: "pawpaw", password: "abcdef")
-User.create(email: "luneya@gmail.com", username: "luneya", first_name: "luneya", password: "abcdef")
+
 User.create(email: "mars@gmail.com", username: "mars", first_name: "mars", password: "abcdef")
 User.create(email: "kevin@gmail.com", username: "kevin", first_name: "kevin", password: "abcdef")
 User.create(email: "alan@gmail.com", username: "alan", first_name: "alan", password: "abcdef")
@@ -42,3 +42,7 @@ Fish.create(name: "Whale 1", image_path: "whale1.png")
 Fish.create(name: "Whale 2", image_path: "whale2.png")
 Fish.create(name: "Shrimp 1", image_path: "shrimp1.png")
 Fish.create(name: "Shrimp 2", image_path: "shrimp2.png")
+
+User.find(1).fishes << Fish.find(1)
+User.find(1).fishes << Fish.find(2)
+User.find(1).fishes << Fish.find(3)

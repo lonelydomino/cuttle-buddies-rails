@@ -48,14 +48,6 @@ ActiveRecord::Schema.define(version: 2021_04_08_060246) do
     t.text "desc"
   end
 
-  create_table "fish_quantities", force: :cascade do |t|
-    t.integer "fish_id"
-    t.integer "user_id"
-    t.integer "num"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "requests", force: :cascade do |t|
     t.integer "user_id"
     t.integer "friend_id"
@@ -63,6 +55,14 @@ ActiveRecord::Schema.define(version: 2021_04_08_060246) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
+  create_table "user_fishes", force: :cascade do |t|
+    t.integer "fish_id"
+    t.integer "user_id"
+    t.string "custom_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
