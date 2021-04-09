@@ -6,28 +6,33 @@
     <h1>Registration </h1>
     <%= form_for(@user) do |f| %>
         <div class="user-box"> 
-                <%= f.label "Email" %>
-                <%= f.email_field :email %><br>
+                <%# TODO email input is not valid without an @  %>
+                <%= f.email_field :email, required: "" %>
+                <%= f.label "Email" %><br>
         </div>
         <div class="user-box"> 
+                <%= f.text_field :first_name, required: "", autocomplete: 'off' %>
                 <%= f.label "First name" %>
-                <%= f.text_field :first_name %><br>
+
         </div>
         <div class="user-box"> 
+                <%= f.text_field :last_name, required: "", autocomplete: 'off' %><br>
                 <%= f.label "Last name" %>
-                <%= f.text_field :last_name %><br>
+
         </div>
         <div class="user-box"> 
+                <%= f.number_field :age, required: "" %>
                 <%= f.label "Age" %>
-                <%= f.number_field :age %><br>
         </div>
         <div class="user-box"> 
+                <%= f.password_field :password, required: "" %>
                 <%= f.label "Password" %>
-                <%= f.password_field :password %><br>
+
         </div>
           <div class="user-box"> 
+                <%= f.file_field :avatar %>
                 <%= f.label "Avatar" %>
-                <%= f.file_field :image %><br>
+
         </div>
 
         <%= f.submit "Sign up", class: "submit-button"%>

@@ -1,9 +1,10 @@
+<%= stylesheet_link_tag "fish" %>
 
 
-stuff
-
-<%= form_with model: @user_fish do |f| %>
-    <%= f.label "Name" %>
-    <%= f.text_field :name %>
-    <%= f.submit  %>
-<% end %>
+<div class="user-box" id="fishname-form"> 
+    <%= form_with model: @user_fish do |f| %>
+        <%= f.label "Name: " %>
+        <%= f.text_field :name, placeholder: @user_fish.custom_name %>
+        <%= f.submit "Save", class: "submit-button" %>
+    <% end %>
+</div>

@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2021_04_08_060246) do
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image"
+    t.string "avatar"
     t.integer "points", default: 0
   end
 

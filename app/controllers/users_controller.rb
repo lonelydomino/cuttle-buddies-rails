@@ -18,7 +18,7 @@ class UsersController < ApplicationController
         @user = User.create(signup_params)
         if @user.id
             session[:user_id] = @user.id
-            redirect_to @user
+            redirect_to @user, success: "Account created!"
         else
             redirect_to '/signup', error: "Failed to register!"
         end
@@ -35,6 +35,6 @@ class UsersController < ApplicationController
     end
 
     def signup_params
-        params.require(:user).permit(:username, :email, :first_name, :last_name, :birthday, :gender, :age, :password, :image)
+        params.require(:user).permit(:username, :email, :first_name, :last_name, :birthday, :gender, :age, :password, :avatar)
     end
 end
