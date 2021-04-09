@@ -5,18 +5,18 @@
     <h1> No users found! </h2>
 <% else %>
     <div class="user-box">
+        <h1> Results </h1>
         <% @users.each do |u| %>
             <% if u.id == current_user.id %>
                 
             <% else %>
                 <figure class="snip1336">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+                    <%= image_tag("underwater-bg.jpeg",size: "320", alt: "sample387")%>
                     <figcaption>
                         <% if !u.avatar.attached? %>
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" class="profile" />
-                       <% else %>
-                       <% byebug %>
-                        <%= image_tag(u.avatar) %>
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" class="profile" />
+                        <% else %>
+                            <%= image_tag(u.avatar, class: "profile", alt: "profile-sample4") %>
                         <% end %>
                         <h2><%= u.username %><span>Engineer</span></h2>
                         <p><%= u.bio %> </p>
@@ -28,8 +28,4 @@
             <% end %>
         <% end %>
     </div>
-<% end %>
-
-<% @users.each do |u| %>
-    <%= u.id %>-<%= u.username %><br><br>
 <% end %>
