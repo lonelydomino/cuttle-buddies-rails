@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :users, only:[:show] do 
-    resources :fishes, only:[:index, :destroy, :show]
+    resources :fishes, only:[:index, :destroy, :show, :edit, :update]
   end
 
   resources :requests, only:[:create, :index, :destroy]
