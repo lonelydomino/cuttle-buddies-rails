@@ -11,6 +11,9 @@ class FriendsController < ApplicationController
     end
 
     def destroy
+        request = Request.find_by_id(params[:id])
+        request.destroy
+        redirect_to friends_path
     end
-    
+
 end

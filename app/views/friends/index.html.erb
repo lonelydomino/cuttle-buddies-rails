@@ -3,24 +3,27 @@
 
 
 <% if @friends.empty? %>
-    <h1> No users found! </h2>
+    <h1 class="friends-header"> No users found! </h2>
 <% else %>
     <div class="user-box">
     <h1> Friends list </h1><br><br>
         <% @friends.each do |u| %>
             <% if u.id == current_user.id %>
-                
+
             <% else %>
                 <figure class="snip1336">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+                    <%= image_tag("underwater-bg.jpeg",size: "320", alt: "sample387")%>
                     <figcaption>
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" class="profile" />
+                        <% if !u.avatar.attached? %>
+                            <%= image_tag("profile-jelly.png", alt: "profile-sample4", class: "profile") %>
+                        <% else %>
+                            <%= image_tag(u.avatar, class: "profile", alt: "profile-sample4") %>
+                        <% end %>
                         <h2><%= u.username %><span>Engineer</span></h2>
-                        <p><%= u.bio %> </p>
-        
                         <%= link_to "Add", requests_path(id: u.id), :method => :post, class: "follow" if logged_in? && !already_friends?(u.id) %>
                         <%= image_tag("friends.png",size: "50") if already_friends?(u.id)%>
                         <%= link_to "Profile",class: "info" if logged_in? %>
+                        <%= button_to "X", {:controller => "friends", :action => "destroy", id: Request.find_request(current_user.id, u.id)}, :method => :delete %>
                     </figcaption>
                 </figure>
             <% end %>

@@ -167,12 +167,16 @@ body {
   .snip1336 .profile {
     border-radius: 50%;
     position: absolute;
-    bottom: 100%;
-    left: 25px;
+    bottom: 137%;
+    left: 50px;
     z-index: 1;
-    max-width: 90px;
+    //max-width: 90px;
     opacity: 1;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
   }
   .snip1336 .follow {
     margin-right: 4%;
@@ -193,4 +197,18 @@ body {
     font-size: 0.8em;
     letter-spacing: 1px;
     opacity: 0.8;
+  }
+
+  .friends-header {
+    position: relative;
+    text-align: center;
+    margin-left: 36%;
+    width: 30%;
+    height: 70%;    
+    padding: 40px;
+    //transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
   }
