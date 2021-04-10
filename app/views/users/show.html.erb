@@ -41,7 +41,6 @@
    <div class="user-box">
     <h2>Friends</h2>
     <p>
-      
         <% if @user.friends.empty? %>
           <%= form_with(url: users_path, method: :get) do |f|%>
             <%= f.hidden_field :search, value: "" %>
@@ -49,7 +48,16 @@
           <% end %>
         <% else %> 
           <% @user.friends.each do |f| %>
-          <%= f.username %><br>
+            <div class="mini-friend-card" >
+              <div class="inner-mini-friend-card">
+                <% if !f.avatar.attached? %>
+                  <%= image_tag("profile-jelly.png", alt: "profile-sample4", class: "mini-friend-avatar", size: "100") %>
+                <% else %>
+                  <%= image_tag(f.avatar, class: "mini-friend-avatar", alt: "profile-sample4", size: "100") %>
+                <% end %>
+               <p class="mini-friend-card-name"> <%= f.username %></p><br>
+              </div>
+            </div>
           <% end %>
         <% end %>
     </p>

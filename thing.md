@@ -29,11 +29,7 @@ Confirm:
 - [ ] make fish collection displayable to other users
 - [ ] move lottery and fish collection from navbar to bottom of aquarium bar?
 - [ ] add partners
-- [ ] style profile page cards
-- [ ] style friend request cards
-- [ ] link user cards to user avatar images
 - [ ] remove user card profile button?
 - [ ] add sea eggs to lottery page
 - [ ] fix validations
-- [ ] fix animations on login/registration fields
-- [ ] fix image uploading
+- [ ] add way to reupload avatar

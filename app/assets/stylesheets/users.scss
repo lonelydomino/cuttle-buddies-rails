@@ -307,3 +307,24 @@ body {
        text-decoration: none;
        box-shadow: none;
      }
+
+     ///////
+////mini friend card
+.mini-friend-card {
+  border-radius: 10px;
+  z-index: 100;
+  background: rgba(55, 106, 201, 0.5);
+}
+.inner-mini-friend-card {
+  display: flex;
+  position: relative;
+  margin: 20px;
+}
+.mini-friend-avatar {
+  padding: 10px;
+  margin-top: 10px;
+}
+.mini-friend-card-name {
+  padding: 40px;
+  font-family: Verdana;
+}
