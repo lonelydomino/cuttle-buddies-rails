@@ -1,7 +1,9 @@
 module RequestsHelper
-   def print_request_sender(r)
-        User.find_by_id(r.user_id).username
+
+   def find_request_sender(r)
+        User.find_by_id(r.user_id)
     end
+
     def sender?
 
     end

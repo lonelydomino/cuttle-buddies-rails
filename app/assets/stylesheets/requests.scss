@@ -84,9 +84,45 @@ body {
   //////////
 //Request card
 .request-card {
-    background-color: rgb(110, 194, 187);
+  background: rgba(77, 148, 189, 0.3);
     border-radius: 20px;
     margin-left: 30px;
     margin-right: 30px;
     padding: 40px 20px;
+}
+.request-accept {
+  position: relative;
+    display: inline-block;
+    padding: 11px 63px;
+    color: #ffffff;
+    background-color: rgb(0, 110, 255);
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana;
+}
+
+.request-deny {
+  position: relative;
+  display: inline-block;
+  padding: 11px 73px;
+  color: #ffffff;
+  background-color: rgb(110, 35, 0);
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  letter-spacing: 4px;
+  border-radius: 5px;
+  border: none;
+  font-family: Verdana;
+}
+
+.request-avatar {
+  padding-top: 20px;
 }
