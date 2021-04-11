@@ -1,0 +1,141 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+  //   Form
+  .user-box {
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    text-align: center;
+    margin-left: 40em;
+    width: 30%;
+    height: 70%;    
+    padding: 40px;
+    //transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .user-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .user-box .user-box {
+    position: relative;
+  }
+  
+  .user-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .user-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #3e7bff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .user-box .user-box input:focus ~ label,
+  .user-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #3e7bff;
+    font-size: 12px;
+  }
+  
+  .user-box form .submit-button {
+    position: relative;
+    display: inline-block;
+    padding: 23px 120px;
+    color: #ffffff;
+    background-color: rgb(0, 110, 255);
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana;
+  }
+  
+  .message-area {
+      resize: none;
+      background: rgba(16, 77, 243, 0.6);
+      color: white;
+      border: none;
+      border-radius: 5px;
+     
+  }
+  ::placeholder {
+    color: rgb(189, 189, 189);
+    font-family: Verdana;
+  }
+
+  #message_recipient_id {
+    width: 120px;
+    height: 30px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: #1c87c9;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 1px 1px rgb(78, 78, 78);
+  }
+  .message-box2 {
+      margin-top: 0%;
+  }
+
+  .new-message-button {
+    position: relative;
+    display: inline-block;
+    padding: 23px 80px;
+    color: #ffffff;
+    background-color: rgb(0, 110, 255);
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana;
+  }
+  .inner-message-box {
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    background: rgba(0, 110, 255, 0.5);
+    text-align: left;
+  }
+  .avatar-message {
+      display: inline-flex;
+  }
+
+  .divider {
+      color: rgba(82, 120, 247, 0.4);
+      background-color: rgba(82, 120, 247, 0.4);
+      border-color: rgba(82, 120, 247, 0.4);
+  }

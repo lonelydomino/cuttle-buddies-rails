@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "messages" %>
+
+
+
+
+<div class="user-box">  
+
+<h1> My messages </h1>
+
+<%= link_to "New Message", new_user_message_path(current_user), class: "new-message-button" %><br>
+    <% @messages.each do |m| %>
+    <div class="inner-message-box"> 
+        <div class="avatar-message">  
+            <%= User.find_by_id(m.author_id).avatar.attached? ? image_tag(User.find_by_id(m.author_id).avatar, size: "70") : image_tag("profile-jelly.png", size: "70") %>
+            <h3><%= User.find_by_id(m.author_id).username %><br></h3> 
+            <%= button_to "X", user_message_path(:id => m.id, message: m), action: "destroy", id: m.id, :method => :delete %>
+        </div>
+        <hr class="divider">
+        <h3>Subject: <%= m.subject %><br></h3>
+        <hr class="divider">
+        <h4>Content: <%= m.content %></h4>
+    </div>
+    <% end %>
+</div>

@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   resources :users, only:[:show] do 
     resources :fishes, only:[:index, :destroy, :show, :edit, :update]
   end
+  resources :users, only:[:show] do
+    resources :messages
+  end
 
   resources :requests, only:[:create, :index, :destroy]
   resources :friends, only:[:create, :index, :destroy]

@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag "messages" %>
+
+<div class="message-box">  
+    <h1>Compose message </h1><br><br>
+    <%= form_for(@message,url: { action: "create" }) do |f| %>
+        <%= f.hidden_field :author_id %>
+         <%= f.label "Recipient: " %>
+        <%= f.select :recipient_id, current_user.friends.collect { |p| [ p.username, p.id ] }, include_blank: true %><br><br>
+        <div class="user-box"> 
+            <%= f.text_field :subject, required: "" %><br><br>
+            <%= f.label "Subject" %>
+        </div>
+        <div class="user-box"> 
+            <%= f.text_area :content, placeholder: "Your message",required: "", size: "37x5", class: "message-area" %><br><br>
+        </div>
+        <%= f.submit "Send message", class: "message-send" %>
+    <% end %>
+</div>
