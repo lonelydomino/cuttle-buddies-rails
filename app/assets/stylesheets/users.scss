@@ -328,3 +328,53 @@ body {
   padding: 40px;
   font-family: Verdana;
 }
+
+//////////////////
+  /* Style the top navigation bar */
+  .aquarium-nav {
+    // /* overflow: hidden; */
+    // background-color: #333;
+
+    // text-align: center;
+    // display: inline-block;
+    // /* padding-left: 50px; */
+    // /* padding: 0px 464px; */
+    // width: 100%;
+
+    z-index: 999;
+    list-style-type: none;
+    margin: 330px 0px 0px -8px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+}
+
+/* Style the topnav links */
+.aquarium-nav a {
+ float: left;
+ display: block;
+ color: #f2f2f2;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ width: 31.65%;
+
+
+  
+
+}
+
+/* Change color on hover */
+.aquarium-nav a:hover {
+ background-color: #ddd;
+ color: black;
+}
+
+//////////////////
+.row {
+  padding-top: 60px;
+}

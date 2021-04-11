@@ -2,7 +2,6 @@
 <%if logged_in?  %> 
   <% p = current_user.points + 100  %>
   <%= current_user.update(points: p) %>
-  
 <% end %>
 <ul>
   <li><%= link_to "Log Out", logout_path if logged_in? %></li>
@@ -13,8 +12,6 @@
   <li><%= link_to "Log In", login_path if !logged_in? %></li>
   <li><%= link_to "Register", signup_path if !logged_in? %></li>
   <li><%= link_to "Home", root_path %></li>
-  <li><%= link_to "Fish Collection", user_fishes_path(current_user.id) if logged_in?%></li>
-  <li><%= link_to "Lottery", lottery_index_path if logged_in?%></li>
   <li class="points">
   <% if logged_in? %><p>Points: <%= current_user.points %></p><% end %> </li>
 

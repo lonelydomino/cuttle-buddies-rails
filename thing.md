@@ -27,9 +27,9 @@ Confirm:
 ---------------------------To Do List----------------------------
 
 - [ ] make fish collection displayable to other users
-- [ ] move lottery and fish collection from navbar to bottom of aquarium bar?
 - [ ] add partners
 - [ ] remove user card profile button?
 - [ ] add sea eggs to lottery page
 - [ ] fix validations
 - [ ] add way to reupload avatar
+- [ ] change display for friends list to be similiar to users search

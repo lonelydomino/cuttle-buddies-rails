@@ -7,10 +7,10 @@
   
 </div>
 
-<div class="topnav">
+<div class="aquarium-nav">
   <%= link_to "All Users", users_path %>
-  <%= link_to "Replace this" %>
-  <%= link_to "Replace this too" %>
+  <%= link_to "Fish Collection", user_fishes_path(current_user.id) if logged_in?%>
+  <%= link_to "Lottery", lottery_index_path if logged_in?%>
 </div>
 
 <div class="row">
