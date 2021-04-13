@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2021_04_11_060807) do
   create_table "user_fishes", force: :cascade do |t|
     t.integer "fish_id"
     t.integer "user_id"
-    t.string "custom_name"
+    t.string "custom_name", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -79,13 +79,9 @@ ActiveRecord::Schema.define(version: 2021_04_11_060807) do
     t.string "username"
     t.string "first_name"
     t.string "last_name"
-    t.string "birthday"
-    t.string "gender"
-    t.integer "age"
     t.string "password_digest"
     t.string "uid"
     t.string "provider"
-    t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"

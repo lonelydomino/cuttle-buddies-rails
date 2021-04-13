@@ -3,35 +3,32 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-  //   Form
-  .user-box {
-    //position: absolute;
-    //top: 50%;
-    //left: 50%;
-    text-align: center;
-    margin-left: 40em;
-    width: 30%;
-    height: 70%;    
+//   Form
+.message-box {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    width: 400px;
     padding: 40px;
-    //transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
   }
   
-  .user-box h2 {
+  .message-box h2 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
   }
   
-  .user-box .user-box {
+  .message-box .user-box {
     position: relative;
   }
   
-  .user-box .user-box input {
+  .message-box .user-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -42,8 +39,7 @@
     outline: none;
     background: transparent;
   }
-
-  .user-box .user-box label {
+  .message-box .user-box label {
     position: absolute;
     top:0;
     left: 0;
@@ -54,15 +50,15 @@
     transition: .5s;
   }
   
-  .user-box .user-box input:focus ~ label,
-  .user-box .user-box input:valid ~ label {
+  .message-box .user-box input:focus ~ label,
+  .message-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: #3e7bff;
     font-size: 12px;
   }
   
-  .user-box form .submit-button {
+  .message-box form .submit-button {
     position: relative;
     display: inline-block;
     padding: 23px 120px;
@@ -139,3 +135,16 @@
       background-color: rgba(82, 120, 247, 0.4);
       border-color: rgba(82, 120, 247, 0.4);
   }
+
+  //////
+  ///delete button
+
+  .x-button {
+    color: white;
+    background-color: red;
+    padding: 2px 5px;
+    border-radius: 45px;
+    box-shadow: none;
+    border: none;
+    cursor:pointer;
+}

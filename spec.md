@@ -12,10 +12,10 @@ Specs:
 - [x] Include signup
 - [x] Include login
 - [x] Include logout
-- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [FIX] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [?] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
 - [ ] The application is pretty DRY
@@ -25,13 +25,19 @@ Confirm:
 
 
 ---------------------------To Do List----------------------------
-
-- [ ] make fish collection displayable to other users
-- [ ] add partners
-- [ ] remove user card profile button?
-- [ ] add sea eggs to lottery page
+- [ ] add way to reupload avatar!!!!!!!!!
+- [ ] fix google log in!!!!!!
 - [ ] fix validations
-- [ ] add way to reupload avatar
-- [ ] change display for friends list to be similiar to users search
-= [ ] is required on form fields sufficient or do i need error detail display for each error?
+- [ ] refactor ALL code
+- [ ] add sea eggs to lottery page
+-  [ ] how to make sample only sample each item once
+- [ ] update how many points people getha    
+
+- [ ] make fish collection displayable to other users?
+- [ ] add partners?
+- [ ] remove user card profile button?
+
+
+- [ ] is required on form fields sufficient or do i need error detail display for each error?
+
 

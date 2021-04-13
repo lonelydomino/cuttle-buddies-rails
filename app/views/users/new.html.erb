@@ -24,10 +24,6 @@
 
         </div>
         <div class="user-box"> 
-                <%= f.number_field :age, required: "" %>
-                <%= f.label "Age" %>
-        </div>
-        <div class="user-box"> 
                 <%= f.password_field :password, required: "" %>
                 <%= f.label "Password" %>
 
@@ -35,9 +31,7 @@
           <div class="user-box"> 
                 <%= f.file_field :avatar %>
                 <%= f.label "Avatar" %>
-
         </div>
-
         <%= f.submit "Sign up", class: "submit-button"%>
     <% end %>
 </div>

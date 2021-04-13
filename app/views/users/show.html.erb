@@ -1,11 +1,13 @@
 <%= stylesheet_link_tag "users" %>
 
 <div class="header">
-<% 10.times do |f| %>
-  <%= image_tag get_random_fish_image, class: "tank-image" %>
-<% end %>
-  
+  <% if @fishes.any? %>
+    <% @fishes.each do |f| %>
+      <%= image_tag("/assets/tank/#{@fishes.sample.fish.image_path}", class: "tank-image") %>
+    <% end %> 
+  <% end %>
 </div>
+<%# TODO Make each image only appear once?  %>
 
 <div class="aquarium-nav">
   <%= link_to "All Users", users_path %>
@@ -16,17 +18,7 @@
 <div class="row">
   <div class="column">
   <div class="user-box">
-    <h2>Partners</h2>
-    <p> 
-        <%# <% if !@user.partners.empty? %> %>
-            <%# <% @user.partners do |p|  %> %>
-                    <%# <%= p.name %> %>
-            <%# <% end %>  %>
-        <%# <% else %> %>
-            Add partner(s)!
-        <%# <% end %>  %>
-        <%# <%= image_tag ('/assets/tank/jellyfish1.png') %> %>
-    </p>
+
   </div>
     </div>
   <div class="column">

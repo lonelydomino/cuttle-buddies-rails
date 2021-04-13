@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
     def show
         @user = current_user
+        @fishes = @user.user_fishes
     end
 
     private
@@ -35,7 +36,7 @@ class UsersController < ApplicationController
     end
 
     def signup_params
-        params.require(:user).permit(:username, :email, :first_name, :last_name, :birthday, :gender, :age, :password, :avatar)
+        params.require(:user).permit(:username, :email, :first_name, :last_name, :password, :avatar)
     end
 end
     

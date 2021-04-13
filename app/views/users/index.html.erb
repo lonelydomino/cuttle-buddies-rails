@@ -7,9 +7,7 @@
     <div class="user-box">
         <h1> Results </h1>
         <% @users.each do |u| %>
-            <% if u.id == current_user.id %>
-                
-            <% else %>
+            <% if u.id != current_user.id %>
                 <figure class="snip1336">
                     <%= image_tag("underwater-bg.jpeg",size: "320", alt: "sample387")%>
                     <figcaption>
