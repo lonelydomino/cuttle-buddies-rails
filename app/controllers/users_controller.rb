@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     before_action :redirect_if_logged_in, only: [:new]
     before_action :redirect_if_not_logged_in, only: [:show]
+    
 
     def index
         if params["search"]
@@ -26,7 +27,19 @@ class UsersController < ApplicationController
 
     def show
         @user = current_user
-        @fishes = @user.user_fishes
+        @fishes = @user.user_fishes.collect {|a| find_fish(a.fish_id) }
+    end
+
+    def edit
+        @user = current_user
+    end
+
+    def update
+        if current_user.update(signup_params)
+            redirect_to user_path, success: "Updated!"
+        else
+            redirect_to user_edit_path(current_user)
+        end
     end
 
     private
@@ -37,6 +50,10 @@ class UsersController < ApplicationController
 
     def signup_params
         params.require(:user).permit(:username, :email, :first_name, :last_name, :password, :avatar)
+    end
+
+    def find_fish(id)
+        Fish.find_by_id(id)
     end
 end
     

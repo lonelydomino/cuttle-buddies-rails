@@ -1,11 +1,7 @@
 <%= stylesheet_link_tag "users" %>
 
 <div class="header">
-  <% if @fishes.any? %>
-    <% @fishes.each do |f| %>
-      <%= image_tag("/assets/tank/#{@fishes.sample.fish.image_path}", class: "tank-image") %>
-    <% end %> 
-  <% end %>
+  <%= display_fish %>
 </div>
 <%# TODO Make each image only appear once?  %>
 
@@ -18,7 +14,9 @@
 <div class="row">
   <div class="column">
   <div class="user-box">
-
+    <h2><%= current_user.username %> </h2>
+   <%= show_avatar %>
+    <%= link_to "Edit user info", edit_user_path, class: "new-message-button" %>
   </div>
     </div>
   <div class="column">
@@ -33,25 +31,7 @@
    <div class="user-box">
     <h2>Friends</h2>
     <p>
-        <% if @user.friends.empty? %>
-          <%= form_with(url: users_path, method: :get) do |f|%>
-            <%= f.hidden_field :search, value: "" %>
-            <button class="friends-search-button" type="submit">Search for friends!</button>
-          <% end %>
-        <% else %> 
-          <% @user.friends.each do |f| %>
-            <div class="mini-friend-card" >
-              <div class="inner-mini-friend-card">
-                <% if !f.avatar.attached? %>
-                  <%= image_tag("profile-jelly.png", alt: "profile-sample4", class: "mini-friend-avatar", size: "100") %>
-                <% else %>
-                  <%= image_tag(f.avatar, class: "mini-friend-avatar", alt: "profile-sample4", size: "100") %>
-                <% end %>
-               <p class="mini-friend-card-name"> <%= f.username %></p><br>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
+       <%= show_friends_mini %>
     </p>
   </div>
     </div>

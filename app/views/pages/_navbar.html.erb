@@ -14,15 +14,17 @@
   <li><%= link_to "Home", root_path %></li>
   <li class="points"> <%= show_points %> </li>
   
+  <% if logged_in? %>
+    <li class="list-search">
+      <div class="search-container">  
+        <%= form_with(url: users_path, method: :get) do |f|%>
+          <%= f.text_field :search, placeholder: "Search users!" %>
+          <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
 
-  <li class="list-search">
-    <div class="search-container">  
-      <%= form_with(url: users_path, method: :get) do |f|%>
-        <%= f.text_field :search, placeholder: "Search users!" %>
-        <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-      <% end %>
-    </div>
-  </li>
 </ul>
 <br>
 <br>

@@ -12,7 +12,7 @@
                     <%= button_to "Accept", friends_path(:id => r.id, request: r), :method => :post, class: "request-accept" %>
                     <%= button_to "Deny", request_path(:id => r.id, request: r), :method => :delete, class: "request-deny" %>
                 </div>
-            </div>
+            </div><br>
         <% end %>
     <% else %>
         <h1> No current requests! </h1>

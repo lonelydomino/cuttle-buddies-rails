@@ -11,6 +11,7 @@ class User < ApplicationRecord
     validates :first_name, presence: true
     validates :last_name, presence: true
 
+
     scope :search_by_name, -> (search) {where("username LIKE ?", "#{search}%")}
 
     def friends
@@ -26,7 +27,7 @@ class User < ApplicationRecord
    
     def self.from_omniauth(auth)
         self.find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |u|
-            byebug
+          
             u.email = auth['info']['email']
             u.first_name = auth['info']['first_name']
             u.last_name = auth['info']['last_name']

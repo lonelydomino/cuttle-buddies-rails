@@ -4,6 +4,6 @@ class Fish < ApplicationRecord
     #has_one_attached :image
     #TODO seed image data?
 
-    scope :user_with_most_fish, -> (friend_id) {where("friend_id = ?", "#{friend_id}")}
+    scope :user_with_most_fish, -> { UserFish.group(:user_id).count(:fish_id)}
 
 end

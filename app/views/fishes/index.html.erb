@@ -1,24 +1,6 @@
 <%= stylesheet_link_tag "fish" %>
 
+<%= display_user_fish(@userfish) %>
 
-<% if @userfish.empty? %>
-    <h1 class="fish-header"> No fish found!<br> Go roll for some!</h2>
-<% else %>
-    <div class="user-box">
-    <h1> My fish </h1><br><br>
-        <% @userfish.each do |f| %>
-                <figure class="snip1336">
-                    <%= image_tag("underwater-bg.jpeg",size: "320")%>
-                    <figcaption>
-                        <%= image_tag("/assets/tank/#{f.fish.image_path}",alt: "profile-sample4", class: "profile") %>
-                        <h2><%= f.custom_name.nil? ? f.fish.name : f.custom_name%><br><br><%= button_to "Edit name", {:controller => "fishes", :action => "edit", id: f.id},class: "edit-fishname", params: {uf_id: f.id}, :method=>:get %><br><span><br> 
-                        <%= button_to 'X', {:controller => "fishes", :action => "destroy", id: f.id}, params: {uf_id: f.id},class: "x-button", data:
-{confirm: "Are you sure you want to delete this fish?" }, :method=>:delete %> </span></h2>
-                        <p><%= f.fish.desc %> </p>
-                    </figcaption>
-                </figure>
-            <% end %>
-    </div>
-<% end %>
 
 

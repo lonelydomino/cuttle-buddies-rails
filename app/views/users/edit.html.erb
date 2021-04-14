@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag "users" %>
+
+
+
+<div class="edit-box">
+    <h1>Edit info</h1>
+    <%= form_for(@user) do |f| %>
+        <div class="edit-info-box"> 
+                <%= f.text_field :first_name, required: "", autocomplete: 'off' %>
+                <%= f.label "First name" %>
+        </div>
+        <div class="edit-info-box"> 
+                <%= f.text_field :last_name, required: "", autocomplete: 'off' %><br>
+                <%= f.label "Last name" %>
+        </div>
+          <div class="edit-info-box"> 
+                <%= f.file_field :avatar %>
+                <%= f.label "Avatar" %>
+        </div>
+        <%= f.submit "Update", class: "submit-button"%>
+    <% end %>
+</div>
