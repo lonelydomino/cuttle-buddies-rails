@@ -10,9 +10,8 @@ module FishHelper
     end
 
     def display_user_fish(collection)
-        arr = ""
         if collection.empty? 
-            arr << content_tag(:h1, "No fish found!/n Go roll for some!", class: "fish-header")
+            content_tag(:h1, "No fish found!/n Go roll for some!", class: "fish-header")
         else
             content_tag(:div, class: "user-box") {
                 concat content_tag(:h1, "My fish") 

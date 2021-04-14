@@ -18,25 +18,27 @@ module UsersHelper
         end
     end
 
-    def show_friends_mini
-        <% if @user.friends.empty? %>
-            <%= form_with(url: users_path, method: :get) do |f|%>
-              <%= f.hidden_field :search, value: "" %>
-              <button class="new-message-button" type="submit">Search for friends!</button>
-            <% end %>
-          <% else %> 
-            <% @user.friends.each do |f| %>
-              <div class="mini-friend-card" >
-                <div class="inner-mini-friend-card">
-                  <% if !f.avatar.attached? %>
-                    <%= image_tag("profile-jelly.png", alt: "profile-sample4", class: "mini-friend-avatar", size: "100") %>
-                  <% else %>
-                    <%= image_tag(f.avatar, class: "mini-friend-avatar", alt: "profile-sample4", size: "100") %>
-                  <% end %>
-                 <p class="mini-friend-card-name"> <%= f.username %></p><br>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
+    def show_friends_mini(collection)
+        if collection.empty?
+            concat content_tag(:h2, "Friends")
+            link_to "Search for friends!", users_path, class: "new-message-button"
+        else
+            content_tag(:p) {
+                concat content_tag(:h2, "Friends")
+            collection.each  do |f|
+                concat content_tag(:div, class: "mini-friend-card") {
+                concat content_tag(:div, class: "inner-mini-friend-card") {
+                  if !f.avatar.attached?
+                    concat image_tag("profile-jelly.png", alt: "profile-sample4", class: "mini-friend-avatar", size: "100")
+                  else
+                    concat image_tag(f.avatar, class: "mini-friend-avatar", alt: "profile-sample4", size: "100")
+                  end
+                  concat content_tag(:p, f.username, class: "mini-friend-card-name")
+                  concat tag(:br)
+                    }
+                 }
+            end.join.html_safe
+        }
+        end
     end
 end

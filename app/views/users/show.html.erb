@@ -14,9 +14,9 @@
 <div class="row">
   <div class="column">
   <div class="user-box">
-    <h2><%= current_user.username %> </h2>
-   <%= show_avatar %>
-    <%= link_to "Edit user info", edit_user_path, class: "new-message-button" %>
+     <h2><%= current_user.username %> </h2>
+     <%= show_avatar %>
+     <%= link_to "Edit user info", edit_user_path, class: "new-message-button" %>
   </div>
     </div>
   <div class="column">
@@ -29,10 +29,7 @@
     </div>
   <div class="column">
    <div class="user-box">
-    <h2>Friends</h2>
-    <p>
-       <%= show_friends_mini %>
-    </p>
+       <%= show_friends_mini(@user.friends) %>
   </div>
     </div>
 </div>
