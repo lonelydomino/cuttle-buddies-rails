@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
     before_action :redirect_if_logged_in, only: [:new]
     before_action :redirect_if_not_logged_in, only: [:show]
-    
+    rescue_from ActiveRecord::RecordNotFound, with: :deny_access
+    rescue_from AbstractController::ActionNotFound, with: :deny_access
+    rescue_from ActionController::RoutingError, with: :deny_access
 
     def index
         if params["search"]

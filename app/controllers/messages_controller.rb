@@ -1,5 +1,11 @@
 class MessagesController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :deny_access
+  rescue_from AbstractController::ActionNotFound, with: :deny_access
+  rescue_from ActionController::RoutingError, with: :deny_access
+
+
   
+
   def index
     @messages = Message.where("recipient_id = ?", current_user.id)
   end
@@ -29,6 +35,10 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:recipient_id, :author_id, :content, :subject)
+  end
+
+  def deny_access
+    render :"errors/record_not_found"
   end
 
 
