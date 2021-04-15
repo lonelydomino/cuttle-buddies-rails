@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
     before_action :redirect_if_logged_in, only: [:new]
-    before_action :redirect_if_not_logged_in, only: [:show]
-    rescue_from ActiveRecord::RecordNotFound, with: :deny_access
-    rescue_from AbstractController::ActionNotFound, with: :deny_access
-    rescue_from ActionController::RoutingError, with: :deny_access
+    before_action :redirect_if_not_logged_in, only: [:show, :index]
+  
 
     def index
         if params["search"]
@@ -23,7 +21,8 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to @user, success: "Account created!"
         else
-            redirect_to '/signup', error: "Failed to register!"
+            flash.now[:error] = @user.errors.full_messages.to_sentence
+            render action: :new
         end
     end
 

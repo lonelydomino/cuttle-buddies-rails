@@ -9,7 +9,7 @@ class FishesController < ApplicationController
 
   def destroy
     UserFish.find_by_id(params[:uf_id]).destroy
-    #OPTIMIZE figure out how to get this to show specific fish quantity
+    
     redirect_to user_fishes_url
   end
 

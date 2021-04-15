@@ -2,7 +2,6 @@ class User < ApplicationRecord
     has_secure_password
     has_one_attached :avatar
     has_many :requests
-    has_many :pending_requests, -> {where confirmed: false }, class_name: 'Request', foreign_key: 'friend_id'
     has_many :user_fishes
     has_many :fishes, through: :user_fishes
 
