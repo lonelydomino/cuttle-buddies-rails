@@ -1,8 +1,4 @@
 class RequestsController < ApplicationController
-    rescue_from ActiveRecord::RecordNotFound, with: :deny_access
-    rescue_from AbstractController::ActionNotFound, with: :deny_access
-    rescue_from ActionController::RoutingError, with: :deny_access
-  
   
     def index
         pending_requests = Request.where("friend_id = ? AND confirmed = false", current_user.id)

@@ -1,7 +1,5 @@
 <%= stylesheet_link_tag "sessions" %>
 
-
-
 <div class="login-box">
     <h1>Registration </h1>
     <%= form_for(@user) do |f| %>
@@ -21,14 +19,12 @@
         <div class="user-box"> 
                 <%= f.text_field :last_name, required: "", autocomplete: 'off' %><br>
                 <%= f.label "Last name" %>
-
         </div>
         <div class="user-box"> 
                 <%= f.password_field :password, required: "" %>
                 <%= f.label "Password" %>
-
         </div>
-          <div class="user-box"> 
+        <div class="user-box"> 
                 <%= f.file_field :avatar %>
                 <%= f.label "Avatar" %>
         </div>

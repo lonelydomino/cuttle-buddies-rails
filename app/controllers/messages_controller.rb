@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     if params[:message][:recipient_id] && !User.exists?(params[:message][:recipient_id])
       redirect_to new_user_message_path, error: "Recipient not found!"
     else
-      Message.create(message_params)
+      Message.create(message_params)  
       redirect_to user_messages_path, success: "Message sent!"
     end
   end

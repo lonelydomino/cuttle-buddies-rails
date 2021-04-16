@@ -10,7 +10,6 @@ class User < ApplicationRecord
     validates :first_name, presence: true
     validates :last_name, presence: true
 
-
     scope :search_by_name, -> (search) {where("username LIKE ?", "#{search}%")}
 
     def friends
