@@ -45,10 +45,6 @@ class UsersController < ApplicationController
 
     private
 
-    def current_user        
-        @user = User.find_by_id(session[:user_id])
-    end
-
     def signup_params
         params.require(:user).permit(:username, :email, :first_name, :last_name, :password, :avatar)
     end

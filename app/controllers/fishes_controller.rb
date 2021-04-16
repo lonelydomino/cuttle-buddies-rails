@@ -1,7 +1,4 @@
 class FishesController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, with: :deny_access
-    rescue_from AbstractController::ActionNotFound, with: :deny_access
-    rescue_from ActionController::RoutingError, with: :deny_access
   
   def index
     @userfish = UserFish.where("user_id = ?", current_user.id)
@@ -9,7 +6,6 @@ class FishesController < ApplicationController
 
   def destroy
     UserFish.find_by_id(params[:uf_id]).destroy
-    
     redirect_to user_fishes_url
   end
 

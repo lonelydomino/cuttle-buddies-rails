@@ -15,7 +15,7 @@
   <div class="column">
   <div class="user-box">
      <h2><%= current_user.username %> </h2>
-     <%= show_avatar %>
+     <%= show_avatar(current_user) %>
      <%= link_to "Edit user info", edit_user_path, class: "new-message-button" %>
   </div>
     </div>

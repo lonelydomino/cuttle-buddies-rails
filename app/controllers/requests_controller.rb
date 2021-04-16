@@ -20,7 +20,6 @@ class RequestsController < ApplicationController
     private
 
     def deny_access
-        byebug
         render :"errors/record_not_found"
       end
 end

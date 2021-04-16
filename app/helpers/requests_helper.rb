@@ -4,9 +4,6 @@ module RequestsHelper
         User.find_by_id(r.user_id)
     end
 
-    def sender?
-
-    end
 
     def already_friends?(id)
         user = User.find_by_id(id)

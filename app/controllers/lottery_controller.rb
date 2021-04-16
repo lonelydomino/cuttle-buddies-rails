@@ -5,7 +5,7 @@ class LotteryController < ApplicationController
     def create
         if current_user.points >= 25
             prize = Fish.order(Arel.sql('RANDOM()')).first
-            points = current_user.points - 25
+            points = current_user.points - 1000
             current_user.update(points: points)
             current_user.fishes << prize
             redirect_to lottery_index_path(current_user), success: "You got: #{prize.name}!"

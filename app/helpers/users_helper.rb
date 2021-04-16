@@ -1,20 +1,23 @@
 module UsersHelper
+
     def update_points
         if logged_in?  
              p = current_user.points + 100 
             current_user.update(points: p)
         end
     end
+
     def show_points
         if logged_in?
             content_tag(:p, "Points: #{current_user.points}")
         end
     end
-    def show_avatar
-        if current_user.avatar.attached?
-            image_tag(current_user.avatar, size: "200")
+
+    def show_avatar(user)
+        if user.avatar.attached?
+            image_tag(user.avatar, size: "200", class: "profile")
         else
-            image_tag("profile-jelly.png", size: "200")
+            image_tag("profile-jelly.png", class: "profile", size: "200")
         end
     end
 

@@ -12,13 +12,6 @@ class User < ApplicationRecord
 
     scope :search_by_name, -> (search) {where("username LIKE ?", "#{search}%")}
 
-    def friends
-        friends_i_sent_requests = Request.where(user_id: id, confirmed: true).pluck(:friend_id)
-        friends_i_got_requests = Request.where(friend_id: id, confirmed: true).pluck(:user_id)
-        ids = friends_i_sent_requests + friends_i_got_requests
-        User.where(id: ids)
-    end
-
     def send_request_to(new_friend)
         Request.find_or_create_by(user_id: self.id, friend_id: new_friend.id)
     end
@@ -32,5 +25,12 @@ class User < ApplicationRecord
             u.password = SecureRandom.hex(20)
             u.username = auth['info']['name'].downcase.gsub(" ", "_")
         end
+    end
+
+    def friends
+        friends_i_sent_requests = Request.where(user_id: id, confirmed: true).pluck(:friend_id)
+        friends_i_got_requests = Request.where(friend_id: id, confirmed: true).pluck(:user_id)
+        ids = friends_i_sent_requests + friends_i_got_requests
+        User.where(id: ids)
     end
 end

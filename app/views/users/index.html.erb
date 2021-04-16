@@ -11,11 +11,7 @@
                 <figure class="snip1336">
                     <%= image_tag("underwater-bg.jpeg",size: "320", alt: "sample387")%>
                     <figcaption>
-                        <% if !u.avatar.attached? %>
-                            <%= image_tag("profile-jelly.png", alt: "profile-sample4", class: "profile") %>
-                        <% else %>  
-                            <%= image_tag(u.avatar, class: "profile", alt: "profile-sample4") %>
-                        <% end %>
+                        <%= show_avatar(u) %>
                         <h2><%= u.username %><span>Fishy Enthusiast</span></h2>
                         <%= link_to "Add", requests_path(id: u.id), :method => :post, class: "follow" if logged_in? && !already_friends?(u.id) %>
                         <%= image_tag("friends.png", size: "50") if already_friends?(u.id)%>
