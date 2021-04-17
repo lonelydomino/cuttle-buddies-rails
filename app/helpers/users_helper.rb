@@ -9,7 +9,7 @@ module UsersHelper
 
     def show_points
         if logged_in?
-            content_tag(:p, "Points: #{current_user.points}")
+            content_tag(:p, "Sea Dollars: #{current_user.points}")
         end
     end
 

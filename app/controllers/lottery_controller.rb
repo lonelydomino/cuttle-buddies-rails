@@ -3,7 +3,7 @@ class LotteryController < ApplicationController
         @fish = Fish.all
     end
     def create
-        if current_user.points >= 25
+        if current_user.points >= 1000
             prize = Fish.order(Arel.sql('RANDOM()')).first
             points = current_user.points - 1000
             current_user.update(points: points)

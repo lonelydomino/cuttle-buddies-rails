@@ -4,7 +4,7 @@
 
 <div class= "element-box"> 
     <%= form_with(url: lottery_index_path, method: :post) do |f| %>
-        <%= f.label "Spend 25 sea dollars to get new fish!" %><br><br><br>
+        <%= f.label "Spend 1000 sea dollars to get new fish!" %><br><br><br>
         <%= f.submit 'Roll !', class: "roll-button", data: { confirm: 'Roll lottery?' } %>
     <% end %>
 </div>
