@@ -8,7 +8,7 @@
             <div class="request-card">
                 <div class="request-contents">
                     <%= find_request_sender(r).username %> <br>
-                    <%= find_request_sender(r).avatar.attached? ? image_tag(find_request_sender(r).avatar, size: "300", class: "request-avatar") : image_tag("profile-jelly.png",class: "request-avatar", size: "200") %> <br>
+                    <%= find_request_sender(r).avatar.attached? ? image_tag(find_request_sender(r).avatar, size: "300", class: "profile") : image_tag("profile-jelly.png",class: "request-avatar", size: "200") %> <br>
                     <%= button_to "Accept", friends_path(:id => r.id, request: r), :method => :post, class: "request-accept" %>
                     <%= button_to "Deny", request_path(:id => r.id, request: r), :method => :delete, class: "request-deny" %>
                 </div>

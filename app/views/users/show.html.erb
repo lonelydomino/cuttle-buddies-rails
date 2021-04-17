@@ -3,10 +3,9 @@
 <div class="header">
   <%= display_fish %>
 </div>
-<%# TODO Make each image only appear once?  %>
 
 <div class="aquarium-nav">
-  <%= link_to "All Users", users_path %>
+  <%= link_to "Most FIsh", most_fish_path %>
   <%= link_to "Fish Collection", user_fishes_path(current_user.id) if logged_in?%>
   <%= link_to "Lottery", lottery_index_path if logged_in?%>
 </div>
@@ -30,6 +29,6 @@
   <div class="column">
    <div class="user-box">
        <%= show_friends_mini(@user.friends) %>
+   </div>
   </div>
-    </div>
 </div>

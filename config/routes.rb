@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  get '/most_fish', to: 'pages#most_fish'
 
   resources :users
   resources :users, only:[:show] do 
     resources :fishes, only:[:index, :destroy, :show, :edit, :update]
   end
+  
   resources :users, only:[:show] do
     resources :messages, only:[:index, :new,   :destroy, :create]
   end

@@ -15,9 +15,8 @@
                         <%= show_avatar(u) %>
                         <h2><%= u.username %><span>Fishy Enthusiast</span></h2>
                         <%= link_to "Add", requests_path(id: u.id), :method => :post, class: "follow" if logged_in? && !already_friends?(u.id) %>
-                        <%= image_tag("friends.png",size: "50") if already_friends?(u.id)%>
-                        <%= link_to "Profile",class: "info" if logged_in? %>
-                        <%= button_to "X", {:controller => "friends", :action => "destroy", id: Request.find_request(current_user.id, u.id)}, class: "x-button", data:
+                        <%= image_tag("friends.png",size: "50",class: "friend-icon") if already_friends?(u.id)%>
+                        <%= button_to "X", {:controller => "friends", :action => "destroy", id: Request.find_request_id(current_user.id, u.id)}, class: "x-button", data:
 {confirm: "Are you sure you want to delete this friend?" }, :method => :delete %>
                     </figcaption>
                 </figure>

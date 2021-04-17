@@ -15,9 +15,9 @@ module UsersHelper
 
     def show_avatar(user)
         if user.avatar.attached?
-            image_tag(user.avatar, size: "200", class: "profile")
+            image_tag(user.avatar, size: "200", class: "profile-1")
         else
-            image_tag("profile-jelly.png", class: "profile", size: "200")
+            image_tag("profile-jelly.png", class: "profile-1", size: "200")
         end
     end
 

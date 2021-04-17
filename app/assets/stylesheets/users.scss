@@ -208,11 +208,24 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    
   }
+  .profile-1 {
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    bottom: 137%;
+    left: 50px;
+    z-index: 1;
+    }
   .snip1336 .follow {
     margin-right: 4%;
     border-color: #2980b9;
     color: #2980b9;
+    margin-left: 27%;
   }
   .snip1336 h2 {
     margin: 0 0 5px;
@@ -323,6 +336,7 @@ body {
 .mini-friend-avatar {
   padding: 10px;
   margin-top: 10px;
+  border-radius: 50%;
 }
 .mini-friend-card-name {
   padding: 40px;
@@ -471,4 +485,33 @@ body {
   border-radius: 5px;
   border: none;
   font-family: Verdana;
+}
+
+.profile-1 {
+border-radius: 50%;
+position: static;
+}
+
+.x-button {
+  color: white;
+  background-color: red;
+  padding: 2px 5px;
+  border-radius: 45px;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 46%;
+}
+
+.pending {
+  margin-right: 14%;
+  border-color: #2980b9;
+  color: #2980b9;
+  background-color: rgba(47, 92, 240, 0.5);
+  text-align: center;
+  border-radius: 20px;
+  padding: 12px 0px;
+}
+.friend-icon {
+  margin-left: 40%;
 }
